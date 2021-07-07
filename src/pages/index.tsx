@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {Image, Box, Text} from '@chakra-ui/react';
+import {Image, Box, Text, HStack} from '@chakra-ui/react';
 
 export default function Home() {
   return (
@@ -29,6 +29,17 @@ export default function Home() {
        </Box>
         <Image ml="205.25px" top="176px" src="/airplane.svg" />        
        </Box>
+
+      <Box maxWidth='1440px' justifyContent="center" display="flex" mx="auto">
+        <Image src="/nightlife.svg" mr="130px" />
+        <Image src="/beach.svg" mr="151px" />
+        <Image src="/modern.svg" mr="171px" />
+        <Image src="/classic.svg" mr="151px" />
+        <Image src="/more.svg" />
+      </Box>
+      <Box mx="auto" mt="80px" borderBottomWidth="2px" w="90px" borderColor="gray.700" />
+
+
     </Box>
   );
 }
