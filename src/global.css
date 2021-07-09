@@ -21,6 +21,10 @@
   width: 0 !important;
 }
 
+.swiper-slide-next p {
+  display: none;
+} 
+
 .swiper-button-next  {
   color: #FFBA08 !important;
   position: relative !important;

@@ -1,9 +1,11 @@
-import Head from 'next/head'
-import {Image, Box, Text, HStack} from '@chakra-ui/react';
+import {Image, Box, Text} from '@chakra-ui/react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import 'swiper/swiper-bundle.css';
 import SwiperCore, {Navigation, Pagination} from 'swiper/core';
+
+import {slides} from '../components/slides';
+
 
 SwiperCore.use([Navigation, Pagination])
 
@@ -11,7 +13,7 @@ export default function Home() {
   return (
     <Box>
       <Box mt='27px' mb='27px'>
-        <Image mx='auto'  src="/logo.svg"/>
+        <Image mx='auto'  src="/logo.svg" alt="" />
       </Box>
       <Box 
         maxWidth='1440px'
@@ -33,15 +35,15 @@ export default function Home() {
           <Text fontSize="20px" color="gray.800">sempre sonhou.</Text>
         </Box>
        </Box>
-        <Image ml="205.25px" top="176px" src="/airplane.svg" />        
+        <Image ml="205.25px" top="176px" src="/airplane.svg" alt="" />        
        </Box>
 
       <Box maxWidth='1160px' justifyContent="space-between" display="flex" mx="auto">
-        <Image src="/nightlife.svg"  />
-        <Image src="/beach.svg"  />
-        <Image src="/modern.svg" />
-        <Image src="/classic.svg"  />
-        <Image src="/more.svg" />
+        <Image src="/nightlife.svg" alt=""  />
+        <Image src="/beach.svg" alt="" />
+        <Image src="/modern.svg" alt="" />
+        <Image src="/classic.svg" alt="" />
+        <Image src="/more.svg" alt="" />
       </Box>
       <Box mx="auto" mt="80px" borderBottomWidth="2px" w="90px" borderColor="gray.700" />
       <Box mt="52px" mb="52px">
@@ -50,27 +52,10 @@ export default function Home() {
       </Box>
       <Swiper
         slidesPerView={1}
-        // spaceBetween={0}
         pagination  
         navigation 
       >
-        <SwiperSlide>
-          <Box 
-            // w="1240px" 
-            // h="450px" 
-            bgImage="url('/europe.png')" 
-            display="flex" 
-            flexDirection="column"
-            justifyContent="center" 
-            alignItems="center"
-          >
-              <Text fontSize="48px" fontWeight="bold" color="gray.900">Europa</Text>
-              <Text fontSize="24px" fontWeight="bold" color="gray.900">O continente mais antigo.</Text>
-          </Box>     
-        </SwiperSlide>
-        <SwiperSlide>
-          <Box  bgImage="url('/north-america.png')" />
-        </SwiperSlide>
+        {slides}
       </Swiper>
 
     </Box>
