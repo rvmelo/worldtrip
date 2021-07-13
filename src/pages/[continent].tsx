@@ -3,6 +3,7 @@ import {Image, Box, Text, useBreakpointValue} from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Description } from '../components/pages/continent/description';
 import { Header } from '../components/header';
+import { Card } from '../components/card';
 
 interface ContinentProps {
   name: string;
@@ -24,9 +25,26 @@ export default function Continent({name, url, description}: ContinentProps) {
         display="flex"
         alignItems="flex-end"
       >
-        <Text ml="140px" mb="59px" fontSize="48px" color="gray.900" >{name}</Text>
+        <Text ml="140px" mb="59px" fontSize="48px" color="gray.900">{name}</Text>
       </Box>
       <Description description={description} />
+      <Box px="140px" mx="auto" maxWidth='1440px'>
+        <Text fontSize="36px">Cidades +100</Text>
+        {/* card container */}
+        <Box 
+          display="flex" 
+          flexWrap="wrap"
+          justifyContent="space-between" 
+          marginTop="40px" 
+          marginBottom="35px"
+        >
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </Box>
+      </Box>
     </Box>
   );
 }

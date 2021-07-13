@@ -29,7 +29,7 @@ export function Description({description}:DescriptionProps) {
               <Text fontSize="24px">Línguas</Text>
             </Box>
             <Box>
-              <Text fontSize="48px" color="yellow.350">
+              <Text textAlign="center" fontSize="48px" color="yellow.350">
                 27
               </Text>
               <Text fontSize="24px">cidades +100</Text>
