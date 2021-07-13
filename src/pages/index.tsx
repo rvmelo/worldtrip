@@ -4,8 +4,11 @@ import { Swiper } from "swiper/react";
 import 'swiper/swiper-bundle.css';
 import SwiperCore, {Navigation, Pagination} from 'swiper/core';
 
-import {slides} from '../components/home/slides';
-import { TravelTypes } from '../components/home/travelTypes';
+// components
+import {slides} from '../components/pages/home/slides';
+import { TravelTypes } from '../components/pages/home/travelTypes';
+import { Header } from '../components/header';
+
 
 
 SwiperCore.use([Navigation, Pagination]);
@@ -20,9 +23,7 @@ export default function Home() {
 
   return (
     <Box>
-      <Box mt='27px' mb='27px'>
-        <Image mx='auto'  src="/logo.svg" alt="" />
-      </Box>
+      <Header  />
       <Box 
         maxWidth='1440px'
         pt="80px"

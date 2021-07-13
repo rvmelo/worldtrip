@@ -1,15 +1,33 @@
 import {Image, Box, Text, useBreakpointValue} from '@chakra-ui/react';
 
 import { GetStaticPaths, GetStaticProps } from "next";
+import { Description } from '../components/pages/continent/description';
+import { Header } from '../components/header';
 
 interface ContinentProps {
   name: string;
   url: string;
+  description: string;
 }
 
-export default function Continent({name}: ContinentProps) {
+export default function Continent({name, url, description}: ContinentProps) {
   return(
-    <Text>{name}</Text>
+    <Box>     
+      <Header hasBackArrow />
+      <Box 
+        mx="auto" 
+        maxWidth="1440px" 
+        height="500px" 
+        bgImage={url} 
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        display="flex"
+        alignItems="flex-end"
+      >
+        <Text ml="140px" mb="59px" fontSize="48px" color="gray.900" >{name}</Text>
+      </Box>
+      <Description description={description} />
+    </Box>
   );
 }
 
@@ -31,7 +49,7 @@ export const getStaticProps: GetStaticProps = ({params}) => {
   const {continent} = params;
 
   const continents = [
-   {name: 'Europa', url: "url('/europe.png')"},
+   {name: 'Europa', url: "url('/europe.png')", description: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste'},
    {name: 'América do Norte', url: "url('/north-america.png')"},
    {name: 'América do Sul', url: "url('/south-america-2.jpg')"},
    {name: 'Ásia', url: "url('/asia.jpg')"},
@@ -45,6 +63,7 @@ export const getStaticProps: GetStaticProps = ({params}) => {
     props: {
       name: continent,
       url: continents[index].url,
+      description: continents[index].description
     },
     revalidate: 60 * 60 * 24, 
   }
