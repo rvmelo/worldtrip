@@ -1,11 +1,10 @@
 import {Image, Box, Text, useBreakpointValue} from '@chakra-ui/react';
-import { Swiper } from "swiper/react";
 
 import 'swiper/swiper-bundle.css';
 import SwiperCore, {Navigation, Pagination} from 'swiper/core';
 
 // components
-import {slides} from '../components/pages/home/slides';
+import {SlidesSwiper} from '../components/pages/home/slides';
 import { TravelTypes } from '../components/pages/home/travelTypes';
 import { Header } from '../components/header';
 
@@ -56,13 +55,7 @@ export default function Home() {
         <Text textAlign="center" fontSize="36px">Vamos Nessa?</Text>
         <Text textAlign="center" fontSize="36px">Então escolha seu continente</Text>
       </Box>
-      <Swiper
-        slidesPerView={1}
-        pagination  
-        navigation 
-      >
-        {slides}
-      </Swiper>
+      <SlidesSwiper />
 
     </Box>
   );

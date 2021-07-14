@@ -8,31 +8,36 @@ export function Description({description}:DescriptionProps) {
   return (
     <Box 
         display="flex" 
+        flexDirection={{base: "column", md: "row"}}
         justifyContent="space-between"
         mx="auto"
-        maxWidth="1440px"
-        px="140px"
-        py="80px"
+        maxWidth={{base: '343px', md: "1440px"}}
+        px={{base: '0', md: '140px'}}
+        paddingTop={{base: '24px', md: '80px'}}
+        paddingBottom={{base: '32px', md: '80px'}}
       >
-        <Box maxWidth="600px" maxHeight="211px">
-          <Text fontSize="24px">{description}</Text>
-        </Box>
-        <Box my="auto" display="flex">
+          <Box maxWidth={{base: '343px', md: '600px'}} >
+            <Text fontSize={{base: '14px', md: '24px'}}>{description}</Text>
+          </Box>
+          <Box 
+            my="auto" 
+            display="flex"
+          >
             <Box>
-              <Text fontSize="48px" color="yellow.350">50</Text>
-              <Text fontSize="24px">Países</Text>
+              <Text fontSize={{base: '24px', md: '48px'}} color="yellow.350">50</Text>
+              <Text fontSize={{base: '18px', md: '24px'}}>Países</Text>
             </Box>
             <Box mx="42px">
-              <Text fontSize="48px" color="yellow.350">
+              <Text fontSize={{base: '24px', md: '48px'}} color="yellow.350">
                 60
               </Text>
-              <Text fontSize="24px">Línguas</Text>
+              <Text fontSize={{base: '18px', md: '24px'}}>Línguas</Text>
             </Box>
             <Box>
-              <Text textAlign="center" fontSize="48px" color="yellow.350">
+              <Text textAlign="center" fontSize={{base: '24px', md: '48px'}} color="yellow.350">
                 27
               </Text>
-              <Text fontSize="24px">cidades +100</Text>
+              <Text fontSize={{base: '18px', md: '24px'}}>cidades +100</Text>
             </Box>
           </Box>
       </Box>

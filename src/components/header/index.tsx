@@ -13,9 +13,20 @@ export function Header({hasBackArrow = false}: HeaderProps) {
       {hasBackArrow ? (
         <> 
           <Link href="/" passHref>
-            <Image ml="140px" mt='34px' mb='34px' src="/back-arrow.svg" alt="" cursor="pointer" />
+            <Image 
+              alt="" 
+              ml={{base: "22px", md: "140px"}} 
+              mt='34px' mb='34px' 
+              src="/back-arrow.svg" 
+              cursor="pointer" 
+            />
           </Link>
-          <Image ml="456px" mt='27px' mb='27px'  src="/logo.svg" alt="" />
+          <Image 
+            alt="" 
+            ml={{base: "80vw", md: "456px"}} 
+            mt='27px' mb='27px'  
+            src="/logo.svg" 
+          />
         </>
       ) : (
         <Image mx="auto" mt='27px' mb='27px'  src="/logo.svg" alt="" />

@@ -1,9 +1,9 @@
-import {Image, Box, Text, useBreakpointValue} from '@chakra-ui/react';
+import {Box, Text} from '@chakra-ui/react';
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Description } from '../components/pages/continent/description';
 import { Header } from '../components/header';
-import { Card } from '../components/card';
+import { CardDeck } from '../components/pages/continent/cardDeck';
 
 interface ContinentProps {
   name: string;
@@ -13,37 +13,35 @@ interface ContinentProps {
 
 export default function Continent({name, url, description}: ContinentProps) {
   return(
-    <Box>     
+    <Box width={{base: "100vh", md: "100%"}}>     
       <Header hasBackArrow />
       <Box 
         mx="auto" 
         maxWidth="1440px" 
-        height="500px" 
+        height={{base: "150px", md: "500px"}} 
         bgImage={url} 
         bgSize="cover"
         bgRepeat="no-repeat"
         display="flex"
-        alignItems="flex-end"
+        alignItems={{base: "center", md: "flex-end"}}
+        justifyContent={{base: "center", md: "inherit"}}
       >
-        <Text ml="140px" mb="59px" fontSize="48px" color="gray.900">{name}</Text>
+        <Text 
+          ml={{base: 0, md: "140px"}} 
+          mb={{base: 0, md: "59px"}} 
+          fontSize={{base: "28px", md: "48px"}} 
+          color="gray.900">
+            {name}
+        </Text>
       </Box>
       <Description description={description} />
-      <Box px="140px" mx="auto" maxWidth='1440px'>
-        <Text fontSize="36px">Cidades +100</Text>
-        {/* card container */}
-        <Box 
-          display="flex" 
-          flexWrap="wrap"
-          justifyContent="space-between" 
-          marginTop="40px" 
-          marginBottom="35px"
-        >
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </Box>
+      <Box 
+        px={{base: 0, md: "140px"}} 
+        mx="auto" 
+        maxWidth={{base: '300px', md: '100%'}}
+      >
+          <Text fontSize={{base: "24px", md: "36px"}}>Cidades +100</Text>
+          <CardDeck />
       </Box>
     </Box>
   );

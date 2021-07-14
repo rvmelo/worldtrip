@@ -10,7 +10,7 @@ export function Card() {
     borderColor="yellow.350"
     borderWidth="1px"
     bgColor="#FFFF"
-    marginBottom="48px"
+    marginBottom={{base: "20px", md: "48px"}}
   >
     <Image height="173px" width="100%" src="/cards/london.png"  alt="" />
     <Box 

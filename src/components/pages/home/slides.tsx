@@ -2,6 +2,7 @@ import { Box, Text} from '@chakra-ui/react';
 import { SwiperSlide } from "swiper/react";
 
 import Link from 'next/link';
+import { Swiper } from "swiper/react";
 
 interface SlideData {
   title: string;
@@ -55,5 +56,17 @@ export const slides = slidesData.map(slideData => (
   </SwiperSlide>
   
 )
-)
+);
+
+export function SlidesSwiper(){
+  return (
+    <Swiper
+        slidesPerView={1}
+        pagination  
+        navigation 
+    >
+      {slides}
+    </Swiper>
+  )
+}
 
