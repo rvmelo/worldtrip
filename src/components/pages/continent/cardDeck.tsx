@@ -6,7 +6,7 @@ export function CardDeck() {
     <Box 
     display="flex" 
     flexWrap="wrap"
-    justifyContent={{base: "flex-end", md: "space-between"}} 
+    justifyContent={{base: "flex-end", md: "flex-start"}} 
     marginTop="40px" 
     marginBottom="35px"
     mx="auto"

@@ -19,6 +19,7 @@
 
 .swiper-slide-next {
   width: 0 !important;
+  height: 450px !important;
 }
 
 .swiper-slide-next p {

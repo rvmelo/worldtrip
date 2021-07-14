@@ -11,6 +11,7 @@ export function Card() {
     borderWidth="1px"
     bgColor="#FFFF"
     marginBottom={{base: "20px", md: "48px"}}
+    marginRight={{base: "0", md: "45px"}}
   >
     <Image height="173px" width="100%" src="/cards/london.png"  alt="" />
     <Box 
@@ -25,7 +26,7 @@ export function Card() {
         <Text>Londres</Text>
         <Text>Reino Unido</Text>
       </Box>
-      <Image width="30px" height="30px" src="/cards/england-flag.png" alt=""/>
+      <Image width="30px" height="30px" src="/cards/flags/england.png" alt=""/>
     </Box>
   </Box>
   )

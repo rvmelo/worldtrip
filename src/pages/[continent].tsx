@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { Description } from '../components/pages/continent/description';
 import { Header } from '../components/header';
 import { CardDeck } from '../components/pages/continent/cardDeck';
+import { continents } from '../constants/continents';
 
 interface ContinentProps {
   name: string;
@@ -34,7 +35,7 @@ export default function Continent({name, url, description}: ContinentProps) {
             {name}
         </Text>
       </Box>
-      <Description description={description} />
+      {description && <Description description={description} />}
       <Box 
         px={{base: 0, md: "140px"}} 
         mx="auto" 
@@ -64,22 +65,13 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = ({params}) => {
   const {continent} = params;
 
-  const continents = [
-   {name: 'Europa', url: "url('/europe.png')", description: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste'},
-   {name: 'América do Norte', url: "url('/north-america.png')"},
-   {name: 'América do Sul', url: "url('/south-america-2.jpg')"},
-   {name: 'Ásia', url: "url('/asia.jpg')"},
-   {name: 'África', url: "url('/africa.jpg')"},
-   {name: 'Oceania', url: "url('/oceania.jpg')"},
-  ]
-
   const index = continents.findIndex(c => c.name === continent);
 
   return {
     props: {
       name: continent,
       url: continents[index].url,
-      description: continents[index].description
+      description: continents[index].description ?? '', 
     },
     revalidate: 60 * 60 * 24, 
   }
